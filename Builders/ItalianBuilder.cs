@@ -1,5 +1,4 @@
-﻿using Pizza.Components;
-using Pizza.Pizzas;
+﻿using Pizza.Pizzas;
 
 namespace Pizza.Builders
 {
@@ -10,24 +9,11 @@ namespace Pizza.Builders
             pizza = new Italian();
         }
 
-        public override void SetCheese()
+        public override BlankPizza GetPizza()
         {
-            pizza.cheese = new Cheese();
-        }
-
-        public override void SetMeat()
-        {
-            pizza.meat = new Meat();
-        }
-
-        public override void SetOlives()
-        {
-            pizza.olives = new Olives();
-        }
-
-        public override void SetTomatoes()
-        {
-            pizza.tomatoes = new Tomatoes();
+            BlankPizza newPizza = pizza;
+            pizza = new Italian();
+            return newPizza;
         }
     }
 }

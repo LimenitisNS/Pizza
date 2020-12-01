@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pizza.Components;
 using Pizza.Pizzas;
 
 namespace Pizza.Builders
@@ -11,9 +7,27 @@ namespace Pizza.Builders
     {
         public BlankPizza pizza;
 
-        public abstract void SetCheese();
-        public abstract void SetTomatoes();
-        public abstract void SetOlives();
-        public abstract void SetMeat();
+        public PizzaBuilder SetCheese()
+        {
+            pizza.cheese = new Cheese();
+            return this;
+        }
+        public PizzaBuilder SetTomatoes()
+        {
+            pizza.tomatoes = new Tomatoes();
+            return this;
+        }
+        public PizzaBuilder SetOlives()
+        {
+            pizza.olives = new Olives();
+            return this;
+        }
+        public PizzaBuilder SetMeat()
+        {
+            pizza.meat = new Meat();
+            return this;
+        }
+
+        public abstract BlankPizza GetPizza();
     }
 }

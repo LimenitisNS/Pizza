@@ -13,36 +13,27 @@ namespace Pizza
 
                 case "Carbonara":
                     CarbonaraBuilder carbonaraBuilder = new CarbonaraBuilder();
-                    SetComponent(carbonaraBuilder);
+                    carbonaraBuilder.SetCheese().SetTomatoes().SetMeat();
                     return carbonaraBuilder.pizza;
 
                 case "Italian":
                     ItalianBuilder italianBuilder = new ItalianBuilder();
-                    SetComponent(italianBuilder);
+                    italianBuilder.SetCheese().SetTomatoes().SetOlives().SetMeat();
                     return italianBuilder.pizza;
 
                 case "Margarita":
                     MargaritaBuilder margaritaBuilder = new MargaritaBuilder();
-                    SetComponent(margaritaBuilder);
+                    margaritaBuilder.SetCheese().SetTomatoes().SetOlives();
                     return margaritaBuilder.pizza;
 
                 case "Pepperoni":
                     PepperoniBuilder pepperoniBuilder = new PepperoniBuilder();
-                    SetComponent(pepperoniBuilder);
+                    pepperoniBuilder.SetCheese().SetTomatoes().SetMeat();
                     return pepperoniBuilder.pizza;
 
                 default:
                     throw new InvalidOperationException("This pizza is not on the menu");
             }
         }
-
-        private void SetComponent(PizzaBuilder pizza)
-        {
-            pizza.SetCheese();
-            pizza.SetMeat();
-            pizza.SetOlives();
-            pizza.SetTomatoes();
-        }
-        
     }
 }

@@ -9,18 +9,14 @@ namespace Pizza
         static void Main(string[] args)
         {
             PizzaBuilder carbonaraBuilder = new CarbonaraBuilder();
-            carbonaraBuilder.SetCheese();
-            carbonaraBuilder.SetMeat();
-            carbonaraBuilder.SetOlives();
-            carbonaraBuilder.SetTomatoes();
+            carbonaraBuilder.SetCheese().SetTomatoes().SetOlives().SetMeat();
 
-            BlankPizza pizza1 = carbonaraBuilder.pizza;
+            BlankPizza pizza1 = carbonaraBuilder.GetPizza();
             Console.WriteLine(pizza1.GetComponentPizza());
 
-            carbonaraBuilder.SetCheese();
-            carbonaraBuilder.SetTomatoes();
+            carbonaraBuilder.SetCheese().SetMeat();
 
-            BlankPizza pizza2 = carbonaraBuilder.pizza;
+            BlankPizza pizza2 = carbonaraBuilder.GetPizza();
             Console.WriteLine("\n" + pizza2.GetComponentPizza());
             Console.ReadKey();
         }

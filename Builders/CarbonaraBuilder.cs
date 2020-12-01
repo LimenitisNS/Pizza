@@ -10,24 +10,11 @@ namespace Pizza.Builders
             pizza = new Carbonara();
         }
 
-        public override void SetCheese()
+        public override BlankPizza GetPizza()
         {
-            pizza.cheese = new Cheese();
-        }
-
-        public override void SetMeat()
-        {
-            pizza.meat = new Meat();
-        }
-
-        public override void SetOlives()
-        {
-
-        }
-
-        public override void SetTomatoes()
-        {
-            pizza.tomatoes = new Tomatoes();
+            BlankPizza newPizza = pizza;
+            pizza = new Carbonara();
+            return newPizza;
         }
     }
 }
